@@ -6,7 +6,9 @@
   "scripts": {
     "ng": "ng",
     "start:browser": "ng serve",
-    "start:ionic": "ionic serve",
+    "start:ionic": "ionic cordova emulate",
+    "start:ionic:ios": "ionic cordova emulate ios",
+    "start:ionic:android": "ionic cordova emulate android",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
