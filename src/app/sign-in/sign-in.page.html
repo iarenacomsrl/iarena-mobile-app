@@ -2,13 +2,17 @@
   <ion-grid>
     <ion-row margin-top>
       <ion-col>
-        <a class="no-account-link">Don't have an account? Sign up.</a>
+        <a (click)="onSwitchAuth(userInLoginPage=!userInLoginPage)" class="no-account-link">
+          <span *ngIf="userInLoginPage; else signUpLink">Don't have an account? Sign up.</span>
+          <ng-template #signUpLink><span>Already have an account? Sign In</span></ng-template>
+        </a>
       </ion-col>
     </ion-row>
     
     <ion-row class="title-row">
       <ion-col>
-        <h1>Sign In</h1>
+        <h1 *ngIf="userInLoginPage; else signUpTitle">Sign In</h1>
+        <ng-template #signUpTitle><h1>Sign Up</h1></ng-template>
         <ion-icon name="logo-google"></ion-icon>
         <a>Login with Google</a>
       </ion-col>
@@ -28,7 +32,11 @@
 
     <ion-row class="submit-row">
       <ion-col>
-          <button>Sign In</button>
+          <button *ngIf="userInLoginPage; else signUpButton">Sign In</button>
+          <ng-template #signUpButton>
+            <button>Next</button>
+            <p class="terms">Press button you agree with terms and conditions</p>
+          </ng-template>       
       </ion-col>
     </ion-row>
 

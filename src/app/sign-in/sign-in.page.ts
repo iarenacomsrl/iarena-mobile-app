@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-sign-in',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sign-in.page.scss'],
 })
 export class SignInPage implements OnInit {
+  userInLoginPage = true;
 
-  constructor() { }
+  constructor(public loadingController: LoadingController) { }
 
   ngOnInit() {
+
+  }
+
+  async onSwitchAuth() {
+    const loading = await this.loadingController.create({
+      message: 'Loading...',
+      duration: 500
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+
   }
 
 }
