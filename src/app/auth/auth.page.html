@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-padding ion-text-center">
+      <ion-col size="12">
+        <h1 class="auth-title">Enter the Arena</h1>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding ion-text-center">
+      <ion-col size="12">
+        <ion-button class="loginGoogleButton">
+            <span>Login with Google</span>
+            <ion-icon class="logo-google" slot="end" name="logo-google"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col size="12" offset-md="1" size-md="10">
+        <ion-card>
+          <ion-segment class="ia-segment" mode="md" (ionChange)="onChangeAuthForm($event)">
+            <ion-segment-button mode="md" value="login" checked>Login</ion-segment-button>
+            <ion-segment-button mode="md" value="register">Register</ion-segment-button>
+          </ion-segment>
+    
+          <ion-card-content class="ion-margin">
+            <ion-list class="edged-input">
+              <ion-item class="ion-margin-vertical">
+                <ion-input placeholder="Mail"></ion-input>
+              </ion-item>
+              <ion-item class="ion-margin-vertical">
+                <ion-input placeholder="Password"></ion-input>
+                <ion-icon class="ion-padding-horizontal passwordIcon" name="eye"></ion-icon>
+              </ion-item>
+
+              <ion-row>
+                <ion-col size="12" class="forgotPassword">
+                  <a>Forgot password?</a>  
+                </ion-col>
+              </ion-row>
+            </ion-list>
+
+            <ion-row>
+              <ion-col offset="3" size="6">
+                <ion-button size="large" class="auth-button" color="primary">{{ submitButtonTitle }}</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

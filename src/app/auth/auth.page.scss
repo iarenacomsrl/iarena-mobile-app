@@ -1,0 +1,47 @@
+.auth-title {
+    margin: 0;
+    color: #293134;
+}
+
+.logo-google {
+    font-size: 20px;
+    margin-left: 16px;
+    margin-bottom: 2px;
+}
+
+.loginGoogleButton{
+    --background: transparent;
+    --border-color: #989aa2;
+    --border-style: solid;
+    --border-width: 1px;
+    --border-radius: 5px;
+
+    span{
+        line-height: 5px;
+        color: #55575d;
+    }
+}
+
+.passwordIcon{
+    color: #807e7e;
+}
+
+.forgotPassword {
+    a {
+        color: #807e7e;
+    }
+}
+    
+
+@media only screen and (min-width: 768px) {
+    .forgotPassword {
+        text-align: right;
+    }
+}
+
+.auth-button{
+    display: block;
+    font-size: 22px;
+    --border-radius: 4px;
+    --ion-color-primary-contrast: #f2f2f2;
+}
