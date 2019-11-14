@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>deals</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toggle [ngModel]="isMyDeals" (ionChange)="change()"></ion-toggle>
+
+  <app-my-deals *ngIf="!isMyDeals; else isOpenMarket"></app-my-deals>
+  <ng-template #isOpenMarket>
+    <app-open-market></app-open-market>
+  </ng-template>
+  
+</ion-content>
